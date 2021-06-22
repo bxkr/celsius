@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 from time import time
 from json import dumps
 
@@ -74,7 +74,7 @@ def temp_post():
         open(f'{__file__}\\..\\celsius_db.json', 'w').write(dumps(temperature))
         return 'Ok.'
     else:
-        return 'Denied.'
+        abort(403)
 
 
-app.run(host='0.0.0.0', port=80)
+app.run(host='0.0.0.0', port=7645)
