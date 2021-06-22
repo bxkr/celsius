@@ -22,4 +22,4 @@ while True:
             'time': time(),
             'temperature': val
         }
-        requests.post('http://localhost/celsius/post', data)
+        requests.post('http://localhost:7645/celsius/post', data)
