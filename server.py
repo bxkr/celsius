@@ -71,7 +71,6 @@ def temp_get():
 def temp_post():
     if request.remote_addr == '127.0.0.1':
         temperature[float(request.form.get('time'))] = float(request.form.get('temperature'))
-        open(f'{__file__}\\..\\celsius_db.json', 'w').write(dumps(temperature))
         return 'Ok.'
     else:
         abort(403)
